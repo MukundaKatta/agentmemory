@@ -5,3 +5,5 @@ node_modules/
 .env.local
 dist/
 coverage/
+*.pyc
+__pycache__/
