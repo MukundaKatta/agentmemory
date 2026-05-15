@@ -1,0 +1,47 @@
+{
+  "name": "@mukundakatta/agentmemory",
+  "version": "0.1.0",
+  "description": "Honest pull-model alternative to Anthropic Dreaming. Time-bucketed episodic store + on-demand summarizer for LLM agents. Reversible deletes, no silent context injection, no background consolidation.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./store": "./src/store.js",
+    "./summarizer": "./src/summarizer.js",
+    "./drift": "./src/drift.js"
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test tests/test.js"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "llm",
+    "memory",
+    "claude",
+    "anthropic",
+    "rag",
+    "episodic",
+    "summarization",
+    "dreaming-alternative"
+  ],
+  "author": "MukundaKatta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MukundaKatta/agentmemory.git"
+  },
+  "homepage": "https://github.com/MukundaKatta/agentmemory#readme",
+  "bugs": {
+    "url": "https://github.com/MukundaKatta/agentmemory/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {}
+}
