@@ -137,13 +137,47 @@ agentmemory pairs cleanly with the existing zero-dep agent stack:
 | [`@mukundakatta/agentvet`](https://www.npmjs.com/package/@mukundakatta/agentvet) | Tool arg validation before execution. |
 | [`@mukundakatta/agentcast`](https://www.npmjs.com/package/@mukundakatta/agentcast) | Structured output enforcer. Use to make the summarizer return JSON when needed. |
 
+## End-to-end Claude demo
+
+A small runnable demo wires `EpisodicStore`, `OnDemandSummarizer`, and the Anthropic SDK together:
+
+```bash
+npm install @anthropic-ai/sdk
+ANTHROPIC_API_KEY=sk-ant-... node examples/claude-agent.js
+```
+
+The demo shows two sessions, retrieval across them, the summary printed before injection (so you can see exactly what's going into Claude's context), and a real delete that removes a memory with no tombstone left behind. Source: [`examples/claude-agent.js`](examples/claude-agent.js).
+
+## Postgres adapter (production backend)
+
+The default `EpisodicStore` is in-memory. For production, swap in `PostgresEpisodicStore` (same interface, real deletes via `DELETE`):
+
+```js
+import pg from "pg";
+import { PostgresEpisodicStore } from "@mukundakatta/agentmemory/postgres";
+
+const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+const store = new PostgresEpisodicStore({ pool, embedder: myEmbedder });
+await store.init();  // creates `agentmemory_events` table + indexes if missing
+
+await store.append({ sessionId: "user-42", kind: "user_message", text: "hi" });
+const hits = await store.retrieve("greetings", { sessionId: "user-42", topK: 5 });
+await store.deleteEvent(hits[0].id);  // real delete, no tombstone
+```
+
+Schema is documented in `src/adapters/postgres.js`. Works on plain Postgres; if you have pgvector you can swap the `embedding FLOAT8[]` column for `vector(N)` and rewrite the retrieve `ORDER BY` for indexed cosine.
+
+Peer dependency: `npm install pg`.
+
 ## Testing
 
 ```bash
-npm test
+npm test            # in-memory store + summarizer + drift (23 tests)
+npm run test:postgres   # Postgres adapter (skipped unless DATABASE_URL set)
+npm run test:all    # everything
 ```
 
-23 tests, all passing. Tests cover:
+23 in-memory tests + 9 Postgres tests, all passing. Tests cover:
 
 - EpisodicStore: append, embed, retrieve (cosine + keyword fallback), filters (session, time, kind), deleteEvent, deleteSession, deleteOlderThan, sessions
 - OnDemandSummarizer: requires LLM, empty-events shortcut, prompt structure, summary trim, custom system prompt
