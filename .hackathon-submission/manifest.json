@@ -1,0 +1,130 @@
+{
+  "_comment": "Driven by the master remote routine. Each entry: file (relative to this dir), name, deadline (UTC RFC3339), submit_url, status. Scheduler reminds via GitHub issues when (deadline - now) <= 14 days and status='active'. Set status='submitted' to silence reminders.",
+  "_generated": "2026-05-15",
+  "hackathons": [
+    {
+      "key": "anthropic-lablab",
+      "name": "Anthropic AI Hackathon (lablab.ai)",
+      "file": "anthropic-lablab.md",
+      "deadline": "2026-06-03T05:00:00Z",
+      "window_start": "2026-05-26T14:00:00Z",
+      "submit_url": "https://lablab.ai/ai-hackathons/anthropic-ai-hackathon",
+      "status": "scheduled-by-dedicated-routine",
+      "_note": "Has its own dedicated routine trig_011ZbNLEYyz6j5sjpAJLUcEZ; this manifest entry is informational only."
+    },
+    {
+      "key": "gcp-rapid-agent",
+      "name": "Google Cloud Rapid Agent Hackathon",
+      "file": "../README.md",
+      "_use": "draft already 95% done at https://devpost.com/submit-to/29711-google-cloud-rapid-agent-hackathon/manage/submissions/1019161-ragvitals-rag-drift-agent-for-gemini",
+      "deadline": "2026-06-11T21:00:00Z",
+      "window_start": "2026-05-05T00:00:00Z",
+      "submit_url": "https://rapid-agent.devpost.com/",
+      "status": "active"
+    },
+    {
+      "key": "devnetwork-ai-ml",
+      "name": "DevNetwork [AI + ML] Hackathon 2026",
+      "file": "devnetwork-ai-ml.md",
+      "deadline": "2026-05-28T23:59:00Z",
+      "window_start": "2026-05-11T00:00:00Z",
+      "submit_url": "https://devnetwork-ai-ml-hack-2026.devpost.com/",
+      "status": "active"
+    },
+    {
+      "key": "global-mcp-descope",
+      "name": "Global MCP Hackathon (Descope)",
+      "file": "global-mcp-descope.md",
+      "deadline": "2026-06-30T23:59:00Z",
+      "_note": "Deadline TBD; using June 30 as a placeholder.",
+      "window_start": "2026-05-01T00:00:00Z",
+      "submit_url": "https://globalmcphackathon.com/",
+      "status": "active"
+    },
+    {
+      "key": "aws-ai-agent-global",
+      "name": "AWS AI Agent Global Hackathon",
+      "file": "aws-ai-agent-global.md",
+      "deadline": "2026-06-30T23:59:00Z",
+      "_note": "Deadline TBD; using June 30 as a placeholder. Confirm at devpost page before relying on this.",
+      "window_start": "2026-05-01T00:00:00Z",
+      "submit_url": "https://aws-agent-hackathon.devpost.com/",
+      "status": "active"
+    },
+    {
+      "key": "aws-datadog-genai",
+      "name": "AWS + Datadog Generative AI Hackathon 2026",
+      "file": "aws-datadog-genai.md",
+      "deadline": "2026-06-30T23:59:00Z",
+      "_note": "Deadline TBD; placeholder.",
+      "window_start": "2026-05-01T00:00:00Z",
+      "submit_url": "https://events.datadoghq.com/events/aws-generative-ai-hackathon-challenge-2026/",
+      "status": "active"
+    },
+    {
+      "key": "aws-ai-league",
+      "name": "AWS AI League 2026 Championship",
+      "file": "aws-ai-league.md",
+      "deadline": "2026-08-31T23:59:00Z",
+      "_note": "Championship 2026 dates TBD; using late August placeholder.",
+      "window_start": "2026-05-15T00:00:00Z",
+      "submit_url": "https://aws.amazon.com/about-aws/whats-new/2025/11/ai-league-2026-championship/",
+      "status": "active"
+    },
+    {
+      "key": "splunk-agentic-ops",
+      "name": "Splunk Agentic Ops Hackathon",
+      "file": "splunk-agentic-ops.md",
+      "deadline": "2026-06-15T23:59:00Z",
+      "window_start": "2026-05-01T00:00:00Z",
+      "submit_url": "https://splunk.devpost.com/",
+      "status": "active"
+    },
+    {
+      "key": "openai-open-model",
+      "name": "OpenAI Open Model Hackathon (gpt-oss)",
+      "file": "openai-open-model.md",
+      "deadline": "2026-07-15T23:59:00Z",
+      "_note": "6-week active; deadline approximate.",
+      "window_start": "2026-05-01T00:00:00Z",
+      "submit_url": "https://openai.devpost.com/",
+      "status": "active"
+    },
+    {
+      "key": "find-evil",
+      "name": "FIND EVIL!",
+      "file": "find-evil.md",
+      "deadline": "2026-06-15T23:59:00Z",
+      "window_start": "2026-05-01T00:00:00Z",
+      "submit_url": "https://devpost.com/c/ai-ml",
+      "status": "active"
+    },
+    {
+      "key": "uipath-agenthack",
+      "name": "UiPath Global AgentHack 2026",
+      "file": "uipath-agenthack.md",
+      "deadline": "2026-06-30T23:59:00Z",
+      "window_start": "2026-05-01T00:00:00Z",
+      "submit_url": "https://www.prnewswire.com/in/news-releases/uipath-launches-global-agenthack-2026-at-devcon-bengaluru-302773236.html",
+      "status": "active"
+    },
+    {
+      "key": "mega-agentathon",
+      "name": "Mega Agent-A-Thon",
+      "file": "mega-agentathon.md",
+      "deadline": "2026-06-14T23:59:00Z",
+      "window_start": "2026-05-01T00:00:00Z",
+      "submit_url": "https://devpost.com/c/ai-ml",
+      "status": "active"
+    },
+    {
+      "key": "international-ai-agents",
+      "name": "International AI Agents Hackathon",
+      "file": "international-ai-agents.md",
+      "deadline": "2026-05-29T23:59:00Z",
+      "window_start": "2026-05-01T00:00:00Z",
+      "submit_url": "https://devpost.com/c/ai-ml",
+      "status": "active"
+    }
+  ]
+}
