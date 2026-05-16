@@ -193,3 +193,13 @@ MIT. See [LICENSE](LICENSE).
 - Companion essay: [Why I refused to build a Dreaming clone for OSS Claude](https://dev.to/mukundakatta/why-i-refused-to-build-a-dreaming-clone-for-oss-claude-2631)
 - Sibling library for full drift math: [ragdrift](https://github.com/MukundaKatta/ragdrift)
 - The rest of the agent reliability stack: [@mukundakatta on npm](https://www.npmjs.com/~mukundakatta)
+
+## Repository Health
+
+This repository includes a dependency-free health check for core documentation, metadata, and CI wiring. Run it locally before publishing changes:
+
+```sh
+python3 scripts/check_repository_health.py
+```
+
+The same check runs in GitHub Actions on pushes and pull requests.
